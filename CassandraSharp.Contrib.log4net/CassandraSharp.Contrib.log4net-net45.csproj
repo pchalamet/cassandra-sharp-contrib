@@ -57,6 +57,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\cassandra-sharp-contrib-version.cs">
+      <Link>cassandra-sharp-contrib-version.cs</Link>
+    </Compile>
+    <Compile Include="..\cassandra-sharp-contrib-info.cs">
+      <Link>Properties\cassandra-sharp-contrib-info.cs</Link>
+    </Compile>
     <Compile Include="**\*.cs" />
   </ItemGroup>
   <ItemGroup>

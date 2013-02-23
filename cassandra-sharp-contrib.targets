@@ -1,0 +1,64 @@
+<Project ToolsVersion="4.0" DefaultTargets="Compile" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Import Project="ThirdParties\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+
+    <PropertyGroup>
+        <Version>0.0.0.0</Version>		
+        <VersionStatus></VersionStatus>		
+    </PropertyGroup>
+	
+	<PropertyGroup>
+		<OutDir>OutDir</OutDir>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<NuGet>.nuget\NuGet.exe</NuGet>
+		<NuGetPackageDir>$(OutDir)\NuGetPackage</NuGetPackageDir>
+	</PropertyGroup>
+
+    <PropertyGroup>
+		<ProjectName>cassandra-sharp-contrib</ProjectName>
+        <ChangesFile>CHANGES.txt</ChangesFile>
+    </PropertyGroup>
+
+	<ItemGroup>
+		<Files-net40 Include="bin\net40\$(Configuration)\CassandraSharp.Contrib.log4net.dll" />
+		<Files-net40 Include="bin\net40\$(Configuration)\CassandraSharp.Contrib.log4net.pdb" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Files-net45 Include="bin\net45\$(Configuration)\CassandraSharp.Contrib.log4net.dll" />
+		<Files-net45 Include="bin\net45\$(Configuration)\CassandraSharp.Contrib.log4net.pdb" />
+	</ItemGroup>
+
+	<Target Name="Clean">
+		<Exec Command="rmdir /q /s $(OutDir)" />
+		<Exec Command="rmdir /q /s $(bin)" />
+		<Exec Command="rmdir /q /s $(obj)" />
+		<MakeDir Directories="$(OutDir)" />
+		<MakeDir Directories="$(NuGetPackageDir)" />
+	</Target>
+	
+    <Target Name="GenerateAssemblyInfo">
+        <AssemblyInfo CodeLanguage="CS" AssemblyVersion="$(Version)" AssemblyFileVersion="$(Version)" AssemblyInformationalVersion="$(Version)$(VersionStatus)" OutputFile="$(ProjectName)-version.cs" />
+    </Target>
+
+    <Target Name="Compile" DependsOnTargets="GenerateAssemblyInfo">
+        <MSBuild Projects="$(ProjectName).sln" />
+    </Target>
+
+	<Target Name="BuildNuGetPackage" DependsOnTargets="Clean;Compile">
+		<Copy SourceFiles="@(Files-net40)" DestinationFolder="$(NuGetPackageDir)\lib\net40" />
+		<Copy SourceFiles="@(Files-net45)" DestinationFolder="$(NuGetPackageDir)\lib\net45" />
+		<Copy SourceFiles="$(ChangesFile)" DestinationFolder="$(NuGetPackageDir)" />
+		<Copy SourceFiles="$(ProjectName).nuspec" DestinationFolder="$(NuGetPackageDir)" />
+	
+		<XmlPoke XmlInputPath="$(NuGetPackageDir)\$(ProjectName).nuspec" Query="/package/metadata/version" Value="$(Version)$(VersionStatus)" />
+
+		<Exec Command="$(NuGet) pack $(NuGetPackageDir)\$(ProjectName).nuspec -OutputDirectory $(OutDir)" />
+	</Target>
+	
+    <Target Name="GenerateVersion" DependsOnTargets="BuildNuGetPackage">
+    </Target>
+
+</Project>

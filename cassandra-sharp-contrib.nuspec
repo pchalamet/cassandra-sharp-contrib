@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>cassandra-sharp-contrib</id>
+    <version>0.0.0.0</version>
+	<title>cassandra-sharp-contrib - extensions for cassandra-sharp</title>
+    <authors>Pierre Chalamet</authors>
+    <owners>Pierre Chalamet</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/pchalamet/cassandra-sharp-contrib</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <summary>cassandra-sharp-contrib is a collection of extensions for cassandra-sharp</summary>
+	<description>cassandra-sharp-contrib is a collection of extensions for cassandra-sharp:
+* log4net appender
+* cassandra-sharp ILogger
+See https://github.com/pchalamet/cassandra-sharp-contrib for more information.
+</description>
+    <tags>apache cassandra driver net40 net45 mono database nosql tpl rx reactive high performance streaming log4net</tags>
+
+    <references>
+    </references>
+	
+	<dependencies>
+		<dependency id="cassandra-sharp" version="2.3.2" />
+	</dependencies>
+  </metadata>
+</package>
