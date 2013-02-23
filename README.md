@@ -8,3 +8,4 @@ Extensions for cassandra-sharp:
 Requirements: 
 * cassandra-sharp
 * Rx
+* log4net
