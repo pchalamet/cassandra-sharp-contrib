@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0814E5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CassandraSharp.Contrib.log4net-net40", "CassandraSharp.Contrib.log4net\CassandraSharp.Contrib.log4net-net40.csproj", "{702E0A8B-5A58-497F-87C2-FEB2638E9B48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CassandraSharp.Contrib.log4netUnitTests-net45", "CassandraSharp.Contrib.log4netUnitTests\CassandraSharp.Contrib.log4netUnitTests-net45.csproj", "{9E8648A4-D25A-4CFA-AAEE-20D9D63FF571}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{702E0A8B-5A58-497F-87C2-FEB2638E9B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{702E0A8B-5A58-497F-87C2-FEB2638E9B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{702E0A8B-5A58-497F-87C2-FEB2638E9B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E8648A4-D25A-4CFA-AAEE-20D9D63FF571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E8648A4-D25A-4CFA-AAEE-20D9D63FF571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E8648A4-D25A-4CFA-AAEE-20D9D63FF571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E8648A4-D25A-4CFA-AAEE-20D9D63FF571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
