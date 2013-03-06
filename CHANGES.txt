@@ -1,4 +1,6 @@
-version 1.0.0
-=============
-* log4net ILogger for cassandra-sharp
-* log4net appender to Cassandra
+version 3.0.1
+- using cassandra-sharp 3.0.1 
+
+version 3.0.0
+- log4net ILogger for cassandra-sharp
+- log4net appender to Cassandra
