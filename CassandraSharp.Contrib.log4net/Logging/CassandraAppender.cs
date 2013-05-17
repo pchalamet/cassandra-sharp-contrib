@@ -83,18 +83,20 @@ namespace CassandraSharp.Contrib.log4net.Logging
 
         protected override void Append(LoggingEvent loggingEvent)
         {
-            Entry entry = new Entry();
-            entry.id = TimedUuid.GenerateTimeBasedGuid(DateTime.Now);
-            entry.app_name = AppName;
-            entry.host_ip = _ipAddress;
-            entry.host_name = _hostname;
-            entry.logger_name = loggingEvent.LoggerName;
-            entry.level = loggingEvent.Level.ToString();
-            entry.message = loggingEvent.RenderedMessage;
-            entry.app_start_time = LoggingEvent.StartTime;
-            entry.thread_name = loggingEvent.ThreadName;
-            entry.log_timestamp = loggingEvent.TimeStamp;
-            entry.throwable_str_rep = loggingEvent.GetExceptionString();
+            Entry entry = new Entry
+                {
+                        id = TimedUuid.GenerateTimeBasedGuid(DateTime.Now),
+                        app_name = AppName,
+                        host_ip = _ipAddress,
+                        host_name = _hostname,
+                        logger_name = loggingEvent.LoggerName,
+                        level = loggingEvent.Level.ToString(),
+                        message = loggingEvent.RenderedMessage,
+                        app_start_time = LoggingEvent.StartTime,
+                        thread_name = loggingEvent.ThreadName,
+                        log_timestamp = loggingEvent.TimeStamp,
+                        throwable_str_rep = loggingEvent.GetExceptionString()
+                };
 
             LocationInfo locInfo = loggingEvent.LocationInformation;
             if (locInfo != null)
@@ -105,7 +107,7 @@ namespace CassandraSharp.Contrib.log4net.Logging
                 entry.method_name = locInfo.MethodName;
             }
 
-            _insert.Execute(entry, ConsistencyLevel).Subscribe(_ => { }, ex => Console.WriteLine(ex));
+            _insert.Execute(entry).WithConsistencyLevel(ConsistencyLevel).AsFuture();
         }
     }
 }

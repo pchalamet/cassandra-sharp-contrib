@@ -1,3 +1,7 @@
+version 3.0.2
+- using cassandra-sharp 3.2.2
+- avoid dumping exception on console
+
 version 3.0.1
 - using cassandra-sharp 3.0.1 
 
