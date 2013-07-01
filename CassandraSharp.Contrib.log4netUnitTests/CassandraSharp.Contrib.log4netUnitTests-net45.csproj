@@ -34,13 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CassandraSharp, Version=3.2.2.0, Culture=neutral, PublicKeyToken=038f94e6e91ef981, processorArchitecture=MSIL">
+    <Reference Include="CassandraSharp, Version=3.3.0.0, Culture=neutral, PublicKeyToken=038f94e6e91ef981, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\cassandra-sharp-core.3.2.2\lib\net45\CassandraSharp.dll</HintPath>
+      <HintPath>..\packages\cassandra-sharp-core.3.3.0\lib\net45\CassandraSharp.dll</HintPath>
     </Reference>
-    <Reference Include="CassandraSharp.Interfaces, Version=3.1.6.0, Culture=neutral, PublicKeyToken=038f94e6e91ef981, processorArchitecture=MSIL">
+    <Reference Include="CassandraSharp.Interfaces, Version=3.3.0.0, Culture=neutral, PublicKeyToken=038f94e6e91ef981, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\cassandra-sharp-interfaces.3.1.6\lib\net45\CassandraSharp.Interfaces.dll</HintPath>
+      <HintPath>..\packages\cassandra-sharp-interfaces.3.3.0\lib\net45\CassandraSharp.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>

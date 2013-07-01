@@ -77,8 +77,9 @@ namespace CassandraSharp.Contrib.log4net.Logging
                             "throwable_str_rep) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                             Keyspace, ColumnFamily);
 
-            ICqlCommand command = _cluster.CreatePocoCommand();
-            _insert = command.Prepare(insertCQL);
+            _insert = _cluster.CreatePocoCommand()
+                              .WithConsistencyLevel(ConsistencyLevel)
+                              .Prepare(insertCQL);
         }
 
         protected override void Append(LoggingEvent loggingEvent)
@@ -107,7 +108,7 @@ namespace CassandraSharp.Contrib.log4net.Logging
                 entry.method_name = locInfo.MethodName;
             }
 
-            _insert.Execute(entry).WithConsistencyLevel(ConsistencyLevel).AsFuture();
+            _insert.Execute(entry).AsFuture();
         }
     }
 }

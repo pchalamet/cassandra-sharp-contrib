@@ -21,7 +21,7 @@ See https://github.com/pchalamet/cassandra-sharp-contrib for more information.
     </references>
 	
 	<dependencies>
-		<dependency id="cassandra-sharp" version="2.3.2" />
+		<dependency id="cassandra-sharp" version="3.3.0" />
 	</dependencies>
   </metadata>
 </package>
