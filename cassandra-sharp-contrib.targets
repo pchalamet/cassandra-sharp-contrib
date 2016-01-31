@@ -40,7 +40,7 @@
 	</Target>
 	
     <Target Name="GenerateAssemblyInfo">
-        <AssemblyInfo CodeLanguage="CS" AssemblyVersion="$(Version)" AssemblyFileVersion="$(Version)" AssemblyInformationalVersion="$(Version)$(VersionStatus)" OutputFile="$(ProjectName)-version.cs" />
+        <AssemblyInfo CodeLanguage="CS" AssemblyVersion="$(Version)" OutputFile="$(ProjectName)-AssemblyInfo.cs" />
     </Target>
 
     <Target Name="Compile" DependsOnTargets="GenerateAssemblyInfo">

@@ -56,8 +56,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\cassandra-sharp-contrib-version.cs">
-      <Link>cassandra-sharp-contrib-version.cs</Link>
+    <Compile Include="..\cassandra-sharp-contrib-AssemblyInfo.cs">
+      <Link>cassandra-sharp-contrib-AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="..\cassandra-sharp-contrib-info.cs">
       <Link>Properties\cassandra-sharp-contrib-info.cs</Link>

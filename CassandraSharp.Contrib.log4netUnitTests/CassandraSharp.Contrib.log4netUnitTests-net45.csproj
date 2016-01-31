@@ -64,6 +64,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\cassandra-sharp-contrib-AssemblyInfo.cs">
+      <Link>cassandra-sharp-contrib-AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Logging\CassandraAppenderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
