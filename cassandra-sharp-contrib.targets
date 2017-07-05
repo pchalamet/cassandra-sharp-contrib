@@ -22,11 +22,6 @@
     </PropertyGroup>
 
 	<ItemGroup>
-		<Files-net40 Include="bin\net40\$(Configuration)\CassandraSharp.Contrib.log4net.dll" />
-		<Files-net40 Include="bin\net40\$(Configuration)\CassandraSharp.Contrib.log4net.pdb" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Files-net45 Include="bin\net45\$(Configuration)\CassandraSharp.Contrib.log4net.dll" />
 		<Files-net45 Include="bin\net45\$(Configuration)\CassandraSharp.Contrib.log4net.pdb" />
 	</ItemGroup>
@@ -48,7 +43,6 @@
     </Target>
 
 	<Target Name="BuildNuGetPackage" DependsOnTargets="Clean;Compile">
-		<Copy SourceFiles="@(Files-net40)" DestinationFolder="$(NuGetPackageDir)\lib\net40" />
 		<Copy SourceFiles="@(Files-net45)" DestinationFolder="$(NuGetPackageDir)\lib\net45" />
 		<Copy SourceFiles="$(ChangesFile)" DestinationFolder="$(NuGetPackageDir)" />
 		<Copy SourceFiles="$(ProjectName).nuspec" DestinationFolder="$(NuGetPackageDir)" />
